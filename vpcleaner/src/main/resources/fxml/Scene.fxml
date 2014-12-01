@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="467.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.free.vpcleaner.FXMLController">
+    <children>
+      <AnchorPane maxHeight="100.0" prefHeight="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Directory:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ComboBox fx:id="directoryPath" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="browseDirectoryPath" mnemonicParsing="false" onAction="#handleBrowseAction" text="Browse..." AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+      <SplitPane dividerPositions="0.3283018867924528" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+         <items>
+            <TableView fx:id="tblFiles" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="colFilename" prefWidth="138.0" text="File Name" />
+                <TableColumn fx:id="colModified" prefWidth="90.0" text="Modified" />
+                  <TableColumn fx:id="colSize" prefWidth="68.0" text="Size" />
+              </columns>
+            </TableView>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Original">
+                     <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <ImageView pickOnBounds="true" preserveRatio="true" />
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+                <Tab text="Converted">
+                     <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </items>
+      </SplitPane>
+    </children>
+</AnchorPane>
